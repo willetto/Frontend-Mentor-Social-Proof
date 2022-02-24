@@ -1,0 +1,213 @@
+:root {
+  --drk-magenta: hsl(300, 43%, 22%);
+  --pink: hsl(333, 80%, 67%);
+  --gray-magenta: hsl(303, 10%, 53%);
+  --light-magenta: hsl(300, 24%, 96%);
+}
+
+html,
+body {
+  margin: 0;
+}
+body {
+  display: grid;
+  place-items: center;
+  font-family: 'Spartan', sans-serif;
+  /* Weights: 400, 500, 700 */
+  background-image: url('images/bg-pattern-top-mobile.svg'),
+    url('images/bg-pattern-bottom-mobile.svg');
+  background-position: top left, right bottom;
+  background-repeat: no-repeat;
+  background-size: 95%, 100%;
+  text-align: center;
+}
+
+main {
+  width: min(95%, 365px);
+  /* Desktop: 1440px */
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background: none;
+  margin-top: 5rem;
+}
+
+header h1 {
+  color: var(--drk-magenta);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+header p {
+  color: var(--gray-magenta);
+  font-weight: 500;
+}
+.blurb {
+  line-height: 1.5rem;
+}
+p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+.five-stars {
+  background-color: var(--light-magenta);
+  padding: 1rem 0;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  font-weight: 700;
+  color: var(--drk-magenta);
+  width: 100%;
+}
+.five-stars p {
+  margin-top: 0.5rem;
+}
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.card {
+  background-color: var(--drk-magenta);
+  color: var(--light-magenta);
+  padding: 2.5rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  text-align: left;
+  font-size: 0.9rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 1rem;
+}
+.card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0;
+  padding: 0;
+}
+.card img {
+  border-radius: 50%;
+  width: 3rem;
+  margin: 0 1rem 0 0;
+}
+.card .name {
+  display: flex;
+  padding-bottom: 0.25rem;
+  font-weight: 700;
+}
+.card .verified {
+  font-weight: 400;
+  color: var(--pink);
+}
+.card p {
+  margin-top: 1rem;
+  line-height: 1.5rem;
+  opacity: 0.75;
+}
+
+.attribution {
+  grid-column-start: span 2;
+  padding: 2rem;
+  color: var(--gray-magenta);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  /* align-content: center; */
+  justify-content: center;
+}
+.attribution a {
+  text-decoration: none;
+  color: var(--pink);
+  transition: 250ms;
+}
+.attribution a:hover {
+  color: var(--drk-magenta);
+  font-weight: 500;
+}
+
+@media (min-width: 905px) {
+  html {
+    height: 100%;
+  }
+  body {
+    background-image: url('images/bg-pattern-top-desktop.svg'),
+      url('images/bg-pattern-bottom-desktop.svg');
+    background-position: top left, right bottom;
+    background-repeat: no-repeat;
+    background-size: min(40%), 100%;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    min-height: 100%;
+  }
+  main {
+    width: min(95%, 1200px);
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: min(70% 800px);
+  }
+  .ratings {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: flex-start;
+    align-self: center;
+  }
+  .five-stars {
+    display: flex;
+    gap: 0.5rem;
+    padding-inline: 0.75rem;
+    height: min-content;
+    margin: 0.5rem 0.5rem;
+    width: 80%;
+  }
+  .ratings .five-stars:nth-child(2) {
+    transform: translatex(10%);
+  }
+  .ratings .five-stars:last-child {
+    transform: translatex(20%);
+  }
+  .five-stars p {
+    margin: 0;
+  }
+
+  .stars {
+    width: max-content;
+    margin-inline: 1rem;
+  }
+  .reviews {
+    width: 100%;
+    grid-column-start: span 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+  .reviews .card:nth-child(2) {
+    transform: translatey(1rem);
+  }
+  .reviews .card:last-child {
+    transform: translatey(2rem);
+  }
+  .card {
+    /* margin-inline: 0.5rem; */
+    padding: 1.5rem;
+  }
+  .card p {
+    width: 100%;
+  }
+}
